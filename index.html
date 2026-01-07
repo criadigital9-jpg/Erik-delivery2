@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<div id="planet3d"></div>
+
+<script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
+<script>
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, 300 / 300, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true });
+
+  renderer.setSize(300, 300);
+  document.getElementById("planet3d").appendChild(renderer.domElement);
+
+  const geometry = new THREE.SphereGeometry(1, 32, 32);
+  const texture = new THREE.TextureLoader().load(
+    "https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg"
+  );
+  const material = new THREE.MeshStandardMaterial({ map: texture });
+  const sphere = new THREE.Mesh(geometry, material);
+
+  scene.add(sphere);
+
+  const light = new THREE.PointLight(0xffffff, 1);
+  light.position.set(5, 5, 5);
+  scene.add(light);
+
+  camera.position.z = 3;
+
+  function 
+    requestAnimationFrame(animate);
+    sphere.rotation.y += 0.005;
+    renderer.render(scene, camera);
+  }
+
+  animate();
+</script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cria Digital | Tráfego Pago</title>
+  <meta name="description" content="Cria Digital — Tráfego Pago e Marketing Digital focado em gerar leads qualificados no WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b10;
+      --card:#12121a;
+      --primary:#7b4bff;
+      --accent:#ff3b3b;
+      --text:#eaeaf0;
+      --muted:#b9b9c6;
+      --wa:#25D366;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:linear-gradient(180deg, #0b0b10 0%, #0f1020 100%);
+      color:var(--text);
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:980px; margin:0 auto; padding:20px}
+    header{
+      position:sticky; top:0; z-index:10;
+      background:rgba(11,11,16,.75); backdrop-filter: blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between}
+    .logo{font-weight:700; letter-spacing:.5px}
+    .logo span{color:var(--primary)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px; padding:14px 20px; border-radius:999px;
+      background:var(--primary); color:#fff; font-weight:600;
+      box-shadow:0 10px 30px rgba(123,75,255,.25);
+    }
+    .btn.wa{background:var(--wa); box-shadow:0 10px 30px rgba(37,211,102,.25)}
+    .hero{padding:56px 0 28px; display:grid; gap:20px}
+    .badge{
+      display:inline-block; padding:8px 14px; border-radius:999px;
+      background:rgba(123,75,255,.15); color:#d7cbff;
+      border:1px solid rgba(123,75,255,.35);
+      width:max-content;
+    }
+    h1{font-size:clamp(30px,6vw,46px); line-height:1.1; margin:8px 0}
+    .subtitle{color:var(--muted)}
+    section{padding:30px 0}
+    .grid{display:grid; gap:16px}
+    .cards{grid-template-columns:1fr}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius); padding:20px;
+    }
+    .icon{
+      width:42px; height:42px; border-radius:12px;
+      display:grid; place-items:center;
+      background:rgba(255,59,59,.15); color:var(--accent);
+      border:1px solid rgba(255,59,59,.35);
+      margin-bottom:10px;
+      font-size:18px;
+    }
+    .stats{grid-template-columns:1fr 1fr}
+    .stat{
+      text-align:center; padding:16px;
+      background:var(--card); border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.06);
+    }
+    .stat strong{font-size:24px}
+    .portfolio img{
+      width:100%; border-radius:12px;
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .cta{
+      background:linear-gradient(135deg, rgba(123,75,255,.28), rgba(255,59,59,.28));
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:var(--radius); padding:26px;
+    }
+    footer{padding:24px 0; color:var(--muted); text-align:center}
+    @media(min-width:768px){
+      .hero{grid-template-columns:1.2fr .8fr; align-items:center}
+      .cards{grid-template-columns:1fr 1fr}
+      .portfolio{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">Cria <span>Digital</span></div>
+    <a class="btn wa" href="https://wa.me/5521979058213?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Cria%20Digital%20e%20quero%20escala%20com%20tr%C3%A1fego%20pago." target="_blank">WhatsApp</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <div>
+      <span class="badge">Marketing Digital & Tráfego Pago</span>
+      <h1>Transformamos anúncios em <span style="color:var(--primary)">leads prontos pra comprar</span>.</h1>
+      <p class="subtitle">
+        A <strong>Cria Digital</strong> cria, gerencia e escala campanhas no Meta Ads e Google Ads 
+        com foco total em gerar clientes reais direto no seu WhatsApp.
+      </p>
+      <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap">
+        <a class="btn wa" href="https://wa.me/5521979058213?text=Quero%20atrair%20clientes%20todos%20os%20dias%20com%20tr%C3%A1fego%20pago." target="_blank">Quero mais clientes</a>
+        <a class="btn" href="#portfolio">Ver resultados</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🚀</div>
+      <h3>Gestão Completa de Tráfego Pago</h3>
+      <p class="subtitle">
+        Você foca no atendimento. A Cria Digital cuida de toda a estratégia, anúncios e otimização.
+      </p>
+      <ul class="subtitle">
+        <li>Estratégia personalizada</li>
+        <li>Campanhas focadas em conversão</li>
+        <li>Otimização diária com dados</li>
+        <li>Escala com controle de custo</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="grid cards">
+      <div class="card">
+        <div class="icon">📊</div>
+        <h3>Decisão baseada em dados</h3>
+        <p class="subtitle">
+          Testamos, analisamos e otimizamos todos os dias para reduzir o custo por lead.
+        </p>
+      </div>
+      <div class="card">
+        <div class="icon">💬</div>
+        <h3>Leads direto no WhatsApp</h3>
+        <p class="subtitle">
+          Chega de curiosos. Leads qualificados falando direto com você.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <h2>Resultados reais</h2>
+    <p class="subtitle">Alguns resultados obtidos em campanhas de clientes.</p>
+    <section id="portfolio">
+  <h2>Referências</h2>
+  <p class="subtitle">
+    Criativos e materiais de marketing digital que representam nosso padrão visual e estratégico.
+  </p>
+
+  <div class="grid portfolio">
+    <img 
+      src="https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200&auto=format&fit=crop"
+      alt="Referência de marketing digital — Cria Digital"
+    >
+  </div>
+</section>
+    </div>
+    <div class="grid stats" style="margin-top:16px">
+      <div class="stat"><strong>+300%</strong><br/>Leads qualificados</div>
+      <div class="stat"><strong>-40%</strong><br/>Custo por lead</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="cta">
+      <h2>Quer escalar suas vendas com tráfego pago?</h2>
+      <p class="subtitle">
+        Clique no botão abaixo, fale direto com um especialista e receba uma análise gratuita do seu negócio.
+      </p>
+      <a class="btn wa" href="https://wa.me/5521979058213?text=Quero%20uma%20an%C3%A1lise%20gratuita%20para%20meu%20neg%C3%B3cio." target="_blank">
+        Falar com especialista agora
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Cria Digital • Marketing Digital & Tráfego Pago
+</footer>
+
+</body>
+</html>
